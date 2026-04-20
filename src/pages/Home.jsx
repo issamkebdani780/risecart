@@ -25,7 +25,7 @@ const Home = () => {
         <FeaturesGrid />
         <HowItWorks />
         <Ecosystem />
-        <PricingSection />
+        {/* <PricingSection /> */}
         <Testimonials />
         <FAQ />
         <FinalCTA />
