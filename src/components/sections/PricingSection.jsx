@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Sparkles, Zap, ShieldCheck, Rocket, Layers } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { CheckCircle2, ArrowRight, Sparkles, Zap, Shield, Crown } from 'lucide-react';
+import Logo from '../ui/Logo';
 
 const PricingSection = () => {
   const { t } = useTranslation();
@@ -8,162 +9,190 @@ const PricingSection = () => {
 
   const plans = [
     {
+      id: 'risego',
       name: 'RiseGo',
-      tagline: 'Pour les débutants',
-      price: isAnnual ? '0' : '0',
-      desc: 'L\'offre idéale pour se lancer sans risque et valider votre premier concept.',
+      icon: <Zap className="w-6 h-6 text-blue-500" />,
+      target: 'Pour les débutants qui veulent se lancer.',
+      monthlyPrice: '1,900',
+      annualPrice: '1,500',
+      popular: false,
       features: [
-        'Boutique prête à l\'emploi',
-        'Base technique solide',
-        'Interface 100% simple',
+        'Boutique prête à l’emploi',
+        'Base solide pour démarrer',
+        'Interface d’administration simple',
         'Volume de commandes réduit',
-        'Démarrage instantané'
+        'Démarrage rapide'
       ],
-      cta: 'Démarrer gratuitement',
-      popular: false,
-      color: 'slate',
-      icon: <Rocket size={20} />
+      cta: 'Démarrer avec RiseGo'
     },
-    {
-      name: 'RiseBasic',
-      tagline: 'Pour la croissance',
-      price: isAnnual ? '29' : '39',
-      desc: 'Passez à la vitesse supérieure avec des outils pensés pour le volume.',
-      features: [
-        'Plus de capacité de vente',
-        'Fonctionnalités poussées',
-        'Analytics plus riches',
-        'Gestion avancée du stock',
-        'Meilleure flexibilité design'
-      ],
-      cta: 'Choisir RiseBasic',
-      popular: true,
-      color: 'primary',
-      icon: <Zap size={20} />
-    },
-    {
+        {
+      id: 'risecart',
       name: 'RiseCart',
-      tagline: 'L\'élite e-commerce',
-      price: isAnnual ? '79' : '99',
-      desc: 'Le système complet pour les vendeurs structurés et hautement ambitieux.',
+      icon: <Logo showText={false} iconClassName="w-10 h-10 shadow-sm" className="flex items-center gap-2 shrink-0 cursor-pointer pointer-events-none" />,
+      target: 'Pour les vendeurs structurés et ambitieux.',
+      monthlyPrice: '7,900',
+      annualPrice: '5,900',
+      popular: true,
       features: [
-        'Outils business avancés',
-        'Capacités étendues (illimité)',
-        'Logique Multi-boutique',
-        'Automatisations intelligentes',
-        'Intégrations écosystème totales',
-        'Pilotage premium & stratégique'
+        'Outils d’optimisation avancés',
+        'Capacités d’hébergement étendues',
+        'Logique multi-boutique incluse',
+        'Automatisations personnalisées',
+        'Intégrations',
+        'Pilotage et support premium dédiés'
       ],
-      cta: 'Passer à RiseCart',
+      cta: 'Contacter les ventes'
+    },
+    {
+      id: 'risebasic',
+      name: 'RiseBasic',
+      icon: <Shield className="w-6 h-6 text-primary" />,
+      target: 'Pour les vendeurs en croissance.',
+      monthlyPrice: '3,900',
+      annualPrice: '2,900',
       popular: false,
-      color: 'violet',
-      icon: <Layers size={20} />
+      features: [
+        'Plus grande capacité de traitement',
+        'Fonctionnalités marketing poussées',
+        'Analytics et rapports plus riches',
+        'Gestion des stocks avancée',
+        'Meilleure flexibilité de design'
+      ],
+      cta: 'Démarrer l\'essai gratuit'
     }
   ];
 
   return (
-    <section className="py-32 bg-white dark:bg-slate-950 transition-colors duration-500 relative overflow-hidden" id="pricing">
-      {/* Background radial highlight */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-primary)_0%,_transparent_70%)] opacity-[0.03] dark:opacity-[0.05] -z-10" />
+    <section className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-500 relative overflow-hidden" id="pricing">
+      
+      {/* Background Ornaments */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 dark:bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-400/5 dark:bg-blue-400/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
 
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20 max-w-2xl mx-auto">
-           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-6">
-              Transparence & Valeur
-           </div>
-          <h2 className="text-4xl lg:text-7xl font-extrabold text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.05]">
-             Des offres adaptées à ton <span className="text-primary italic">ambition</span>.
+      <div className="container mx-auto px-6 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-full text-slate-800 dark:text-slate-200 font-medium text-sm animate-slide-up">
+            <Sparkles size={16} className="text-primary" />
+            <span>{t('Tarification Simple et Transparente')}</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight animate-slide-up" style={{ animationDelay: '0.1s' }}>
+             Une offre adaptée à chaque étape de votre <span className="text-primary">Croissance</span>
           </h2>
-          
-          <p className="text-slate-500 dark:text-slate-400 text-lg font-medium mb-10">
-             Commencez gratuitement et évoluez avec un système qui grandit avec vous.
+          <p className="text-lg text-slate-600 dark:text-slate-400 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            {t("Testez toutes nos fonctionnalités sans risque. L'essai est 100% gratuit, sans engagement, et sans carte bancaire requise.")}
           </p>
-          
-          {/* Monthly/Annual Switch */}
-          <div className="flex items-center justify-center gap-5 mt-10">
-            <span className={`text-sm font-black uppercase tracking-widest ${!isAnnual ? 'text-primary' : 'text-slate-400 dark:text-slate-600'}`}>{t('pricing_monthly')}</span>
-            <button 
-              onClick={() => setIsAnnual(!isAnnual)}
-              className="w-16 h-8 bg-slate-100 dark:bg-slate-900 rounded-full relative p-1.5 transition-all hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 shadow-inner"
-            >
-              <div className={`w-5 h-5 bg-primary rounded-full transition-all duration-500 shadow-xl ${isAnnual ? 'ltr:translate-x-8 rtl:-translate-x-8' : 'translate-x-0'}`} />
-            </button>
-            <div className="flex items-center gap-2">
-               <span className={`text-sm font-black uppercase tracking-widest ${isAnnual ? 'text-primary' : 'text-slate-400 dark:text-slate-600'}`}>{t('pricing_annual')}</span>
-               <span className="text-[10px] bg-primary text-white font-black px-2 py-0.5 rounded-full ltr:ml-1 rtl:mr-1 animate-bounce-soft">{t('pricing_save')}</span>
+
+          {/* Enhanced Billing Switch */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            
+            <div className="relative flex items-center p-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-inner">
+              <div 
+                className={`absolute inset-y-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-950 rounded-full shadow-sm transition-transform duration-300 ease-out border border-slate-200 dark:border-slate-700 ${isAnnual ? 'translate-x-[100%] ml-[3px]' : 'translate-x-0 ml-[3px]'}`} 
+              />
+              <button 
+                onClick={() => setIsAnnual(false)}
+                className={`relative z-10 w-32 py-2 text-sm font-bold transition-colors rounded-full focus:outline-none ${!isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+              >
+                Mensuel
+              </button>
+              <button 
+                onClick={() => setIsAnnual(true)}
+                className={`relative z-10 w-32 py-2 text-sm font-bold transition-colors rounded-full focus:outline-none ${isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}
+              >
+                Annuel
+              </button>
             </div>
+
+
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 items-stretch pt-4">
-          {plans.map((plan) => (
+        {/* Pricing Cards */}
+        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {plans.map((plan, index) => (
             <div 
-              key={plan.name} 
-              className={`bg-white dark:bg-slate-900 rounded-[3rem] p-10 lg:p-14 flex flex-col relative overflow-hidden transition-all duration-700 hover:scale-[1.02] border border-slate-100 dark:border-slate-800 group ${
-                plan.popular ? 'shadow-[0_40px_80px_-15px_rgba(0,162,255,0.15)] dark:shadow-[0_40px_80px_-15px_black] border-primary/20 bg-slate-50/50 dark:bg-slate-900/50 scale-[1.05] z-10' : 'shadow-sm'
+              key={plan.id}
+              className={`relative flex flex-col p-8 rounded-3xl transition-all duration-300 animate-slide-up ${
+                plan.popular 
+                  ? 'bg-white dark:bg-slate-950 border-2 border-primary shadow-2xl shadow-primary/10 lg:-translate-y-4' 
+                  : 'bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-200 dark:border-slate-700 hover:border-primary/50 hover:bg-white dark:hover:bg-slate-800 hover:shadow-xl'
               }`}
+              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
             >
               {plan.popular && (
-                <div className="absolute top-8 right-10 ltr:right-10 rtl:left-10 bg-primary text-white text-[10px] font-black uppercase px-4 py-1.5 rounded-full tracking-tighter shadow-xl shadow-primary/20 flex items-center gap-2">
-                  <Sparkles size={12} /> {t('pricing_popular')}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-primary text-white text-[10px] xs:text-xs font-black uppercase tracking-wider rounded-full shadow-lg shadow-primary/20 whitespace-nowrap">
+                  Choix le plus populaire
                 </div>
               )}
-              
-              <div className="mb-10">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-slate-100 dark:border-slate-800 ${plan.color === 'violet' ? 'bg-violet-500/10 text-violet-500' : 'bg-primary/10 text-primary'}`}>
-                   {plan.icon}
+
+              {/* Card Header */}
+              <div className="flex items-center gap-4 mb-4">
+                <div className={`p-3 rounded-2xl ${plan.popular ? 'bg-primary/10' : 'bg-slate-100 dark:bg-slate-800'}`}>
+                  {plan.icon}
                 </div>
-                <p className={`text-[10px] font-black uppercase tracking-[0.3em] mb-4 ${plan.color === 'violet' ? 'text-violet-500' : 'text-primary'}`}>{plan.tagline}</p>
-                <h3 className="text-4xl font-black text-slate-900 dark:text-white mb-6 tracking-tight leading-none">{plan.name}</h3>
-                <div className="flex items-baseline gap-2 pt-6 border-t border-slate-100 dark:border-slate-800">
-                  <span className="text-slate-400 dark:text-slate-600 text-xl font-black italic">{t('pricing_currency')}</span>
-                  <span className="text-6xl font-black text-slate-900 dark:text-white tracking-tighter tabular-nums">{plan.price}</span>
-                  <span className="text-slate-400 dark:text-slate-500 font-bold text-xs uppercase tracking-widest">{t('pricing_per_month')}</span>
+                <div>
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white">{plan.name}</h3>
                 </div>
               </div>
 
-              <p className="text-slate-500 dark:text-slate-400 text-sm mb-10 leading-relaxed font-medium">
-                {plan.desc}
+              <p className="text-sm text-slate-500 dark:text-slate-400 min-h-[40px] mb-6">
+                {plan.target}
               </p>
 
-              <div className="h-px bg-slate-100 dark:bg-slate-800 mb-10" />
+              {/* Price */}
+              <div className="mb-8 p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl xs:text-5xl font-black text-slate-900 dark:text-white tracking-tighter">
+                    {isAnnual ? plan.annualPrice : plan.monthlyPrice}
+                  </span>
+                  <span className="text-slate-500 dark:text-slate-400 font-medium">
+                    DA / {isAnnual ? 'mois' : 'mois'}
+                  </span>
+                </div>
+                {isAnnual && (
+                  <p className="text-xs text-emerald-500 font-bold mt-2">
+                    Facturé annuellement (Économie de 20%)
+                  </p>
+                )}
+                {!isAnnual && (
+                  <p className="text-xs text-slate-400 dark:text-slate-500 mt-2 font-medium">
+                    Facturé mensuellement
+                  </p>
+                )}
+              </div>
 
-              <ul className="space-y-6 mb-12 flex-1 relative z-10">
-                {plan.features.map((feat) => (
-                  <li key={feat} className="flex items-center gap-4 text-xs lg:text-sm text-slate-900 dark:text-white font-black tracking-tight group/feat transition-all hover:translate-x-1">
-                    <div className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 shadow-sm border border-slate-100 dark:border-slate-800 ${plan.color === 'violet' ? 'bg-violet-500/5 text-violet-500' : 'bg-primary/5 text-primary'}`}>
-                       <ShieldCheck size={14} strokeWidth={3} />
-                    </div>
-                    {feat}
-                  </li>
-                ))}
-              </ul>
+              {/* Features List */}
+              <div className="flex-1">
+                <p className="text-xs font-black uppercase tracking-widest text-slate-900 dark:text-white mb-4">
+                  Ce qui est inclus :
+                </p>
+                <ul className="space-y-4">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex gap-3 text-slate-600 dark:text-slate-300">
+                      <CheckCircle2 size={18} className={`shrink-0 ${plan.popular ? 'text-primary' : 'text-slate-400 dark:text-slate-500'}`} />
+                      <span className="text-sm font-medium leading-tight">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <button className={`w-full py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all flex items-center justify-center gap-3 group-hover:scale-[1.03] active:scale-95 shadow-xl ${
-                plan.popular 
-                ? 'bg-primary text-white shadow-primary/30' 
-                : plan.color === 'violet' 
-                ? 'bg-violet-600 text-white shadow-violet-500/30'
-                : 'bg-white dark:bg-slate-800 text-slate-900 dark:text-white border-2 border-slate-100 dark:border-slate-700 hover:border-primary/40'
-              }`}>
-                {plan.cta} <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+              {/* CTA */}
+              <button 
+                className={`mt-10 w-full py-4 px-6 rounded-2xl font-black tracking-wide flex items-center justify-center gap-2 transition-all active:scale-95 ${
+                  plan.popular
+                    ? 'bg-primary hover:bg-primary-hover text-white shadow-lg shadow-primary/25'
+                    : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white'
+                }`}
+              >
+                <span>{plan.cta}</span>
+                <ArrowRight size={18} />
               </button>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 text-center flex flex-col items-center gap-6">
-           <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
-              <Zap size={16} className="text-primary fill-primary animate-pulse" />
-              <p className="text-slate-900 dark:text-white text-xs font-black uppercase tracking-widest">
-                 7 jours d'essai gratuit complet &bull; Sans carte bancaire
-              </p>
-           </div>
-           
-           <p className="text-slate-400 dark:text-slate-500 text-[10px] font-bold uppercase tracking-[0.2em]">
-              Promotion de lancement active &bull; Prix garantis à vie
-           </p>
-        </div>
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const ScrollToTop = () => {
 
 // Placeholder pages for structure
 const Placeholder = ({ title }) => (
-  <div className="bg-bg min-h-screen pt-32 flex items-center justify-center text-center px-6">
+  <div className="bg-white dark:bg-slate-950 min-h-screen pt-32 flex items-center justify-center text-center px-6">
     <div>
       <h1 className="text-4xl lg:text-6xl font-bold text-heading mb-4">{title}</h1>
       <p className="text-body text-xl">Page en cours de développement.</p>

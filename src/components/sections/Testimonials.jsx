@@ -10,22 +10,22 @@ const Testimonials = () => {
       name: 'Ahmed K.',
       role: 'E-commerçant COD',
       content: 'Depuis que je suis passé sur RiseCart, ma gestion des commandes est devenue un jeu d\'enfant. Plus de pertes, plus d\'erreurs, juste de la croissance structurée.',
-      avatar: 'AK',
-      color: 'bg-blue-500'
+      avatarImage: '/confiance/conf1.webp',
+      color: 'blue'
     },
     {
       name: 'Sarah M.',
       role: 'Marque DNVB',
       content: 'Le design de ma boutique est maintenant au niveau des plus grandes marques. La conversion a littéralement triplé en l\'espace d\'un seul mois d\'utilisation.',
-      avatar: 'SM',
-      color: 'bg-emerald-500'
+      avatarImage: '/confiance/conf2.webp',
+      color: 'emerald'
     },
     {
       name: 'Yassine B.',
       role: 'Vendeur Multi-canal',
       content: 'L\'intégration native avec RiseConfirm a sauvé mon business. Gérer toutes les confirmations directement depuis mon dashboard RiseCart est absolument génial.',
-      avatar: 'YB',
-      color: 'bg-violet-500'
+      avatarImage: '/confiance/conf3.webp',
+      color: 'violet'
     }
   ];
 
@@ -61,8 +61,8 @@ const Testimonials = () => {
                 <p className="text-slate-600 dark:text-slate-400 text-lg mb-12 leading-relaxed font-medium relative z-10">"{t.content}"</p>
                 
                 <div className="flex items-center gap-4 pt-6 relative z-10">
-                   <div className={`w-14 h-14 rounded-2xl ${t.color} text-white flex items-center justify-center font-black shadow-lg shadow-${t.color.split('-')[1]}-500/30`}>
-                      {t.avatar}
+                   <div className={`w-16 h-16 bg-white rounded-2xl p-2 shadow-lg shadow-${t.color}-500/30 border border-slate-100 dark:border-slate-800 shrink-0 flex items-center justify-center`}>
+                      <img src={t.avatarImage} alt={t.name} className="max-w-full max-h-full object-contain" />
                    </div>
                    <div>
                       <h4 className="font-black text-slate-900 dark:text-white tracking-tight text-lg">{t.name}</h4>

@@ -52,8 +52,8 @@ const Ecosystem = () => {
             </ul>
           </div>
 
-          {/* Right Visual Connectivity */}
-          <div className="lg:w-1/2 w-full relative h-[600px] flex items-center justify-center">
+          {/* Right Visual Connectivity (Desktop) */}
+          <div className="hidden lg:flex lg:w-1/2 w-full relative h-[600px] items-center justify-center">
             
             {/* The Main Hub (RiseCart) */}
             <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20">
@@ -92,18 +92,51 @@ const Ecosystem = () => {
                  </div>
                ))}
             </div>
-
           </div>
+
+          {/* Right Visual Connectivity (Mobile) */}
+          <div className="flex lg:hidden flex-col items-center mt-12 w-full z-20 animate-slide-up">
+             {/* Main Hub */}
+             <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl border-2 border-primary shadow-xl shadow-primary/20 w-full max-w-[220px] text-center flex flex-col items-center gap-3 relative z-20">
+                  <div className="absolute inset-0 bg-primary/5 rounded-3xl" />
+                  <div className="w-14 h-14 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-primary/30 relative z-10 overflow-hidden">
+                     <img src="/ecosystem/risecart.jpg" alt="RiseCart" className="w-full h-full object-cover" />
+                  </div>
+                  <div className="relative z-10">
+                     <h3 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">RiseCart</h3>
+                     <p className="text-[9px] font-black text-primary uppercase tracking-widest mt-1">Data Origin</p>
+                  </div>
+             </div>
+
+             {/* Connection Line */}
+             <div className="w-px h-12 border-l-2 border-dashed border-primary/40 my-2" />
+
+             {/* Satellites Grid */}
+             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+               {modules.map((mod, i) => (
+                 <div key={i} className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-md flex items-center gap-4 hover:border-primary/50 transition-colors">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${mod.bg} ${mod.color}`}>
+                       {mod.icon}
+                    </div>
+                    <div className="flex-1">
+                       <h4 className="text-sm font-black text-slate-900 dark:text-white tracking-tight">{mod.name}</h4>
+                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{mod.desc}</p>
+                    </div>
+                 </div>
+               ))}
+             </div>
+          </div>
+          
         </div>
       </div>
 
-      <style jsx>{`
+      <style dangerouslySetInnerHTML={{__html: `
         @keyframes dash {
           to {
             stroke-dashoffset: -1000;
           }
         }
-      `}</style>
+      `}} />
     </section>
   );
 };

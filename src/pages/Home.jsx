@@ -15,7 +15,7 @@ import FinalCTA from '../components/sections/FinalCTA';
 
 const Home = () => {
   return (
-    <div className="bg-bg min-h-screen">
+    <div className="bg-white dark:bg-slate-950 min-h-screen">
       <Navbar />
       <main>
         <Hero />
@@ -25,7 +25,7 @@ const Home = () => {
         <FeaturesGrid />
         <HowItWorks />
         <Ecosystem />
-        {/* <PricingSection /> */}
+        <PricingSection />
         <Testimonials />
         <FAQ />
         <FinalCTA />

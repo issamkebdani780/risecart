@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const faqs = [
     {
       q: "À qui s'adresse RiseCart ?",
@@ -58,7 +60,13 @@ const FAQ = () => {
 
          <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} question={faq.q} answer={faq.a} />
+              <AccordionItem 
+                key={i} 
+                question={faq.q} 
+                answer={faq.a} 
+                isOpen={openIndex === i}
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              />
             ))}
          </div>
       </div>
@@ -66,13 +74,11 @@ const FAQ = () => {
   );
 };
 
-const AccordionItem = ({ question, answer }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const AccordionItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div className={`bg-white dark:bg-slate-900 rounded-[2rem] overflow-hidden transition-all duration-300 border ${isOpen ? 'border-primary ring-1 ring-primary/20' : 'border-slate-100 dark:border-slate-800 shadow-sm'}`}>
       <button 
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onClick}
         className="w-full flex items-center justify-between p-8 text-left group"
       >
         <span className={`text-lg font-black tracking-tight transition-colors ${isOpen ? 'text-primary' : 'text-slate-900 dark:text-white group-hover:text-primary'}`}>
