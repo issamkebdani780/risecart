@@ -6,6 +6,7 @@ import FonctionnalitesPage from './pages/FonctionnalitesPage';
 import TarifsPage from './pages/TarifsPage';
 import EcosystemePage from './pages/EcosystemePage';
 import DemoPage from './pages/DemoPage';
+import BlogPage from './pages/BlogPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -41,7 +42,7 @@ function App() {
         <Route path="/login" element={<Placeholder title="Connexion" />} />
         <Route path="/signup" element={<Placeholder title="Essai Gratuit" />} />
         {/* Additional pages mentioned in spec */}
-        <Route path="/blog" element={<Placeholder title="Blog & Ressources" />} />
+        <Route path="/blog" element={<BlogPage />} />
         <Route path="/cgv" element={<Placeholder title="CGV" />} />
         <Route path="/privacy" element={<Placeholder title="Confidentialité" />} />
         <Route path="/legal" element={<Placeholder title="Mentions Légales" />} />

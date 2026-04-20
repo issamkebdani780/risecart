@@ -57,7 +57,7 @@ const Navbar = () => {
     { name: t('nav_pricing'), path: '/pricing' },
     { name: t('nav_ecosystem'), path: '/ecosystem' },
     { name: t('nav_demo'), path: '/demo' },
-    { name: t('nav_faq'), path: '/faq' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   const languages = [
