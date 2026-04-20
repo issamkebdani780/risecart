@@ -1,110 +1,107 @@
 import React from 'react';
-import { Layers, Shield, Truck, CreditCard, Mic, Cpu, Zap, ShoppingBag, Plus, ArrowRight, Activity } from 'lucide-react';
+import { Layers, Shield, Truck, CreditCard, Mic, ArrowRight, Cloud, Combine, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import Logo from '../ui/Logo';
 
 const Ecosystem = () => {
   const { t } = useTranslation();
   
   const modules = [
-    { id: 'manager', name: 'RiseManager', icon: <Layers size={20} />, color: 'bg-blue-500', text: 'text-blue-500', border: 'border-blue-500/20', desc: 'ERP & Pilotage global' },
-    { id: 'confirm', name: 'RiseConfirm', icon: <Shield size={20} />, color: 'bg-emerald-500', text: 'text-emerald-500', border: 'border-emerald-500/20', desc: 'Confirmation & CRM' },
-    { id: 'fbr', name: 'FBR', icon: <Truck size={20} />, color: 'bg-orange-500', text: 'text-orange-500', border: 'border-orange-500/20', desc: 'Logistique intégrée' },
-    { id: 'pay', name: 'RisePay', icon: <CreditCard size={20} />, color: 'bg-violet-500', text: 'text-violet-500', border: 'border-violet-500/20', desc: 'Paiements unifiés' },
-    { id: 'voice', name: 'RiseVoice', icon: <Mic size={20} />, color: 'bg-rose-500', text: 'text-rose-500', border: 'border-rose-500/20', desc: 'IA Vocale & Support' },
-    { id: 'future', name: 'Autres Modules', icon: <Plus size={20} />, color: 'bg-slate-400', text: 'text-slate-400', border: 'border-slate-400/20', desc: 'Écosystème évolutif' },
+    { name: 'RiseManager', icon: <img src="/ecosystem/risemanager.png" alt="RiseManager" className="w-8 h-8 object-contain" />, color: 'text-blue-500', bg: 'bg-white', desc: 'Pilotage global & ERP' },
+    { name: 'RiseConfirm', icon: <img src="/ecosystem/RiseConfirm.jpg" alt="RiseConfirm" className="w-full h-full object-cover rounded-xl" />, color: 'text-emerald-500', bg: 'bg-white', desc: 'Call center & CRM' },
+    { name: 'RisePay', icon: <img src="/ecosystem/risepay.jpg" alt="RisePay" className="w-full h-full object-cover rounded-xl" />, color: 'text-violet-500', bg: 'bg-white', desc: 'Gestion financière' },
+    { name: 'FBR', icon: <img src="/ecosystem/fbr.jpg" alt="FBR" className="w-full h-full object-cover rounded-xl" />, color: 'text-orange-500', bg: 'bg-white', desc: 'Logistique & Livraison' },
+    { name: 'RiseAcademy', icon: <img src="/ecosystem/riseacademy.png" alt="RiseAcademy" className="w-full h-full object-cover rounded-xl" />, color: 'text-rose-500', bg: 'bg-white', desc: 'Formation & Coaching' },
   ];
 
   return (
-    <section className="py-32 relative overflow-hidden bg-slate-950 transition-colors duration-500" id="ecosystem">
-      {/* Dark modern grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
-      
-      {/* Background Orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/10 blur-[150px] rounded-full -z-10" />
-      
-      <div className="container mx-auto px-6 relative z-10">
-        
-        {/* Header Text */}
-        <div className="text-center max-w-3xl mx-auto mb-20 animate-slide-up">
-           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-6">
-              <Cpu size={12} /> Écosystème RiseGroup
-           </div>
-           
-           <h2 className="text-4xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.05] tracking-tight">
-              La vitrine d'une machine de <span className="text-primary italic">guerre</span>.
-           </h2>
-           
-           <p className="text-slate-400 text-lg lg:text-xl font-medium leading-relaxed">
-              RiseCart ne vit pas seul. Il est la porte d'entrée d'un système d'exploitation complet conçu pour automatiser chaque aspect de votre croissance e-commerce.
-           </p>
-        </div>
+    <section className="py-24 lg:py-32 bg-white dark:bg-slate-950 transition-colors duration-500 overflow-hidden relative">
+      {/* Background Gradients */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 dark:bg-primary/10 blur-[150px] rounded-full point-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-violet-500/5 dark:bg-violet-500/10 blur-[150px] rounded-full point-events-none" />
 
-        {/* Network Diagram Architecture */}
-        <div className="max-w-5xl mx-auto relative mt-16">
-           
-           {/* Center Trunk Line */}
-           <div className="absolute top-[80px] bottom-[100px] left-1/2 w-0.5 bg-gradient-to-b from-primary via-slate-800 to-transparent -translate-x-1/2 hidden md:block" />
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          
+          {/* Left Content */}
+          <div className="lg:w-1/2 space-y-8 z-10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.2em] shadow-sm">
+               <Combine size={14} className="text-primary" /> Écosystème Connecté
+            </div>
+            
+            <h2 className="text-4xl lg:text-6xl font-extrabold text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+               La vitrine d'une machine de <span className="text-primary italic">guerre</span>.
+            </h2>
+            
+            <p className="text-slate-500 dark:text-slate-400 text-lg font-medium leading-relaxed max-w-xl">
+               RiseCart ne vit pas seul. Il s'agit de la porte d'entrée E-commerce synchronisée en temps réel avec toute l'infrastructure technologique de RiseGroup.
+            </p>
 
-           {/* Top Node: RiseCart (The Core) */}
-           <div className="flex justify-center mb-16 relative z-10">
-              <div className="bg-slate-900 border-2 border-primary/40 rounded-[2.5rem] p-6 lg:p-8 flex items-center justify-center gap-6 shadow-[0_0_50px_rgba(0,162,255,0.2)] hover:scale-105 transition-transform duration-500 cursor-pointer min-w-[280px]">
-                 <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30 shrink-0">
-                    <ShoppingBag size={28} />
-                 </div>
-                 <div className="text-left">
-                    <div className="text-[10px] font-black tracking-[0.3em] text-primary uppercase mb-1 flex items-center gap-2"><Activity size={10} className="animate-pulse" /> Vitrine Active</div>
-                    <div className="text-3xl font-black text-white tracking-tight">RiseCart</div>
-                 </div>
-              </div>
-           </div>
+            <ul className="space-y-5 pt-4">
+               {[
+                 'Synchronisation des stocks en temps réel',
+                 'Remontée automatique des commandes vers Confirm',
+                 'Calcul exact des statistiques et du ROI publicitaire'
+               ].map((item, i) => (
+                 <li key={i} className="flex items-center gap-4 text-slate-900 dark:text-white font-bold text-sm lg:text-base">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                       <Zap size={14} />
+                    </div>
+                    {item}
+                 </li>
+               ))}
+            </ul>
+          </div>
 
-           {/* The Branches (Modules) */}
-           <div className="grid md:grid-cols-2 gap-x-24 gap-y-8 lg:gap-y-12 relative w-full px-4 lg:px-0">
-              {modules.map((mod, i) => {
-                const isEven = i % 2 !== 0; // if true, it's on the right in a 2-col grid
-                return (
-                  <div key={mod.name} className="relative group">
-                     {/* Connecting Branch Line (Desktop only) */}
-                     <div className={`absolute top-1/2 w-12 lg:w-24 h-0.5 bg-slate-800 hidden md:block transition-colors duration-300 group-hover:bg-slate-600 ${isEven ? 'right-full' : 'left-full'}`}>
-                        {/* Status blip on line */}
-                        <div className={`absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full ${mod.color} opacity-0 group-hover:opacity-100 transition-opacity ${isEven ? 'left-0 animate-[slideRight_1s_ease-in-out_infinite]' : 'right-0 animate-[slideLeft_1s_ease-in-out_infinite]'}`} />
-                     </div>
-
-                     {/* The Module Card */}
-                     <div className={`bg-slate-900/80 backdrop-blur-sm border ${mod.border} p-6 rounded-3xl flex items-center gap-5 hover:-translate-y-1 transition-all duration-300 hover:shadow-xl hover:bg-slate-900 cursor-pointer`}>
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${mod.color} bg-opacity-10 ${mod.text}`}>
-                           {mod.icon}
-                        </div>
-                        <div>
-                           <h4 className="text-xl font-black text-white mb-0.5 tracking-tight group-hover:text-primary transition-colors">{mod.name}</h4>
-                           <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">{mod.desc}</p>
-                        </div>
-                     </div>
+          {/* Right Visual Connectivity */}
+          <div className="lg:w-1/2 w-full relative h-[600px] flex items-center justify-center">
+            
+            {/* The Main Hub (RiseCart) */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20">
+               <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border-2 border-primary shadow-2xl shadow-primary/20 w-48 text-center flex flex-col items-center gap-4 group hover:scale-105 transition-transform duration-500 relative">
+                  <div className="absolute inset-0 bg-primary/5 rounded-[2.5rem]" />
+                  <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-lg shadow-primary/30 relative z-10 overflow-hidden">
+                     <img src="/ecosystem/risecart.jpg" alt="RiseCart" className="w-full h-full object-cover" />
                   </div>
-                );
-              })}
-           </div>
+                  <div className="relative z-10">
+                     <h3 className="text-xl font-black text-slate-900 dark:text-white tracking-tight">RiseCart</h3>
+                     <p className="text-[10px] font-black text-primary uppercase tracking-widest mt-1">Data Origin</p>
+                  </div>
+               </div>
+            </div>
 
-           {/* Bottom Connecting Button */}
-           <div className="flex justify-center mt-20 relative z-10">
-              <button className="flex items-center gap-3 bg-white text-slate-950 px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] group">
-                 Découvrir l'écosystème <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
-           </div>
+            {/* SVG Connecting Lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" style={{ left: '100px' }}>
+              <path d="M 90 300 C 180 300, 200 100, 250 100" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" className="text-slate-200 dark:text-slate-800 animate-[dash_20s_linear_infinite]" />
+              <path d="M 90 300 C 180 300, 200 200, 250 200" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" className="text-slate-200 dark:text-slate-800 animate-[dash_20s_linear_infinite]" />
+              <path d="M 90 300 L 250 300" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" className="text-slate-200 dark:text-slate-800 animate-[dash_20s_linear_infinite]" />
+              <path d="M 90 300 C 180 300, 200 400, 250 400" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" className="text-slate-200 dark:text-slate-800 animate-[dash_20s_linear_infinite]" />
+              <path d="M 90 300 C 180 300, 200 500, 250 500" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="6 6" className="text-slate-200 dark:text-slate-800 animate-[dash_20s_linear_infinite]" />
+            </svg>
+
+            {/* Satellite Modules */}
+            <div className="absolute right-0 top-0 bottom-0 flex flex-col justify-between py-10 z-20 w-64">
+               {modules.map((mod, i) => (
+                 <div key={i} className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-black/20 flex items-center gap-4 hover:-translate-x-2 transition-transform duration-300 cursor-default group">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${mod.bg} ${mod.color}`}>
+                       {mod.icon}
+                    </div>
+                    <div>
+                       <h4 className="text-sm font-black text-slate-900 dark:text-white tracking-tight">{mod.name}</h4>
+                       <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{mod.desc}</p>
+                    </div>
+                 </div>
+               ))}
+            </div>
+
+          </div>
         </div>
       </div>
 
       <style jsx>{`
-        @keyframes slideRight {
-          0% { left: 0%; opacity: 0; }
-          50% { opacity: 1; }
-          100% { left: 100%; opacity: 0; }
-        }
-        @keyframes slideLeft {
-          0% { right: 0%; opacity: 0; }
-          50% { opacity: 1; }
-          100% { right: 100%; opacity: 0; }
+        @keyframes dash {
+          to {
+            stroke-dashoffset: -1000;
+          }
         }
       `}</style>
     </section>

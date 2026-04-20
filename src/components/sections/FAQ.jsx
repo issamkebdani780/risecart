@@ -20,12 +20,32 @@ const FAQ = () => {
       a: "C'est notre promesse. Notre interface est 100% intuitive et ne nécessite aucune ligne de code."
     },
     {
+      q: "Puis-je gérer plusieurs produits facilement ?",
+      a: "Absolument. Notre gestionnaire de catalogue permet d'importer, de modifier et de gérer des centaines de produits et leurs variantes avec une interface très fluide et rapide."
+    },
+    {
       q: "Le site est-il responsive ?",
       a: "Oui, toutes les boutiques créées avec RiseCart sont ultra-optimisées pour mobile, là où se font 80% des ventes aujourd'hui."
     },
     {
+      q: "RiseCart est-il connecté à d'autres services ?",
+      a: "Oui, RiseCart s'intègre nativement à RiseManager, RiseConfirm et RisePay. Nous sommes l'outil central de l'écosystème RiseGroup."
+    },
+    {
+      q: "Puis-je changer d'offre plus tard ?",
+      a: "Oui, vous pouvez facilement changer d'offre (upgrade ou downgrade) à tout moment directement depuis les paramètres de votre compte, selon l'évolution de votre activité."
+    },
+    {
       q: "Comment fonctionne l'essai gratuit ?",
-      a: "Vous bénéficiez de 7 jours gratuits avec accès à toutes les fonctionnalités de l'offre choisie pour tester la puissance de la plateforme."
+      a: "Vous bénéficiez de 7 jours gratuits avec un accès complet à toutes les fonctionnalités de l'offre choisie pour tester la puissance de la plateforme, sans aucune carte bancaire requise."
+    },
+    {
+      q: "Y a-t-il une démo ?",
+      a: "Oui, vous pouvez demander une démonstration personnalisée avec l'un de nos experts via le bouton de démo pour découvrir la plateforme en détail."
+    },
+    {
+      q: "Puis-je être accompagné ?",
+      a: "Oui, nous offrons un support technique ultra-réactif pour toutes nos offres. De plus, les utilisateurs de nos plans professionnels bénéficient d'un accompagnement stratégique dédié."
     }
   ];
 
