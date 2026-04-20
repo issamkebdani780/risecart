@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import FonctionnalitesPage from './pages/FonctionnalitesPage';
 import TarifsPage from './pages/TarifsPage';
 import EcosystemePage from './pages/EcosystemePage';
+import DemoPage from './pages/DemoPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -34,7 +35,7 @@ function App() {
         <Route path="/features" element={<FonctionnalitesPage />} />
         <Route path="/pricing" element={<TarifsPage />} />
         <Route path="/ecosystem" element={<EcosystemePage />} />
-        <Route path="/demo" element={<Placeholder title="Démonstration" />} />
+        <Route path="/demo" element={<DemoPage />} />
         <Route path="/faq" element={<Placeholder title="FAQ" />} />
         <Route path="/contact" element={<Placeholder title="Contact" />} />
         <Route path="/login" element={<Placeholder title="Connexion" />} />
