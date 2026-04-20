@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Outfit:wght@100..900&display=swap');
+
+@theme {
+  --color-primary: #00a2ff;
+  --color-primary-hover: #0088dd;
+  --color-secondary: #00a2ff;
+  --color-bg: #ffffff;
+  --color-card: #f8fafc;
+  --color-heading: #0f172a;
+  --color-body: #475569;
+  
+  --font-sans: "Outfit", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  
+  --shadow-premium: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-glass: 0 4px 60px rgba(0, 162, 255, 0.1);
+
+  --breakpoint-xs: 420px;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans bg-white text-slate-600 dark:bg-slate-950 dark:text-slate-400 antialiased transition-colors duration-500;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-slate-900 dark:text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30 dark:bg-slate-900/70 dark:border-white/5;
+  }
+
+  .glass-card {
+    @apply bg-white backdrop-blur-lg border border-slate-100 shadow-sm transition-all duration-300 dark:bg-slate-900 dark:border-white/5;
+  }
+
+  .glass-card:hover {
+    @apply -translate-y-1 border-primary/30 shadow-xl shadow-primary/5 dark:bg-slate-800 dark:border-primary/50;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 162, 255, 0.3);
+  }
+
+  .bg-glow {
+    background: radial-gradient(circle at center, rgba(0, 162, 255, 0.05) 0%, transparent 70%);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
