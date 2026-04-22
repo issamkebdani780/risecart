@@ -1,6 +1,9 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import enDict from './locales/en.json';
+import arDict from './locales/ar.json';
+import frDict from './locales/fr.json';
 
 i18n
   .use(LanguageDetector)
@@ -9,6 +12,7 @@ i18n
     resources: {
       fr: {
         translation: {
+          ...frDict,
           "hero_badge_1": "Conçu pour le marché Africain",
           "hero_badge_2": "+12 000 commandes traitées/jour",
           "hero_title": "Crée, gère et développe ta boutique <span class='whitespace-nowrap'>e-commerce</span> <span class='text-primary italic block sm:inline'>depuis une seule plateforme.</span>",
@@ -59,6 +63,7 @@ i18n
       },
       en: {
         translation: {
+          ...enDict,
           "hero_badge_1": "Designed for the African market",
           "hero_badge_2": "+12 000 orders processed every day",
           "hero_title": "Create, manage and grow your <span class='whitespace-nowrap'>e-commerce</span> <span class='text-primary italic block sm:inline'>from one single platform.</span>",
@@ -109,7 +114,8 @@ i18n
       },
       ar: {
         translation: {
-           "hero_badge_1": "مصمم للسوق الأفريقي",
+          ...arDict,
+          "hero_badge_1": "مصمم للسوق الأفريقي",
           "hero_badge_2": "+12,000 طلب يتم معالجته يومياً",
           "hero_title": "أنشئ وأدر ونمِ متجرك <span class='whitespace-nowrap'>الإلكتروني</span> <span class='text-primary italic block sm:inline'>من منصة واحدة فقط.</span>",
           "hero_subtitle": "حل كامل لإطلاق موقع تجارة إلكترونية احترافي، إدارة طلباتك، تتبع أدائك والنمو بشكل أسرع.",

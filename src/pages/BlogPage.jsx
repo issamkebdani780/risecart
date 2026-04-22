@@ -1,141 +1,151 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowRight, Search, Clock, Tag, BookOpen, TrendingUp, Package, PhoneCall, Truck, ShoppingCart, BarChart3, Zap, ChevronRight } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
-const categories = [
-  { id: 'all',          label: 'Tous',              icon: BookOpen     },
-  { id: 'ecommerce',    label: 'E-commerce',         icon: ShoppingCart },
-  { id: 'conversion',   label: 'Conversion',         icon: TrendingUp   },
-  { id: 'logistique',   label: 'Logistique & COD',   icon: Truck        },
-  { id: 'marketing',    label: 'Marketing Digital',  icon: Zap          },
-  { id: 'analytics',    label: 'Analytics',          icon: BarChart3    },
-  { id: 'confirmation', label: 'Confirmation',       icon: PhoneCall    },
-];
+export const useBlogData = () => {
+  const { t } = useTranslation();
 
-const articles = [
-  {
-    id: 1,
-    title: 'Comment lancer sa boutique e-commerce en Algérie en 2025',
-    excerpt: 'Guide complet pour créer, configurer et lancer votre boutique en ligne dès aujourd\'hui. De la sélection du nom de domaine à votre première vente.',
-    category: 'ecommerce',
-    categoryLabel: 'E-commerce',
-    readTime: '8 min',
-    date: '12 Avril 2025',
-    featured: true,
-    tags: ['Lancement', 'Guide', 'Débutant'],
-    color: 'blue',
-  },
-  {
-    id: 2,
-    title: '10 techniques pour augmenter votre taux de confirmation COD',
-    excerpt: 'Le paiement à la livraison domine le marché algérien. Découvrez les méthodes éprouvées pour confirmer plus de commandes et réduire les retours.',
-    category: 'confirmation',
-    categoryLabel: 'Confirmation',
-    readTime: '6 min',
-    date: '8 Avril 2025',
-    featured: true,
-    tags: ['COD', 'Scripts', 'Agents'],
-    color: 'emerald',
-  },
-  {
-    id: 3,
-    title: 'Optimiser sa page produit pour booster les conversions',
-    excerpt: 'Les visiteurs décident en 3 secondes. Apprenez à structurer vos fiches produit pour maximiser les ajouts au panier et réduire les abandons.',
-    category: 'conversion',
-    categoryLabel: 'Conversion',
-    readTime: '5 min',
-    date: '5 Avril 2025',
-    featured: false,
-    tags: ['UX', 'Fiches produit', 'CRO'],
-    color: 'violet',
-  },
-  {
-    id: 4,
-    title: 'Livraison express vs standard : quelle stratégie pour votre boutique ?',
-    excerpt: 'Le choix de votre stratégie logistique impacte directement votre satisfaction client et vos marges. Comparatif complet des offres disponibles.',
-    category: 'logistique',
-    categoryLabel: 'Logistique & COD',
-    readTime: '7 min',
-    date: '2 Avril 2025',
-    featured: false,
-    tags: ['Livraison', 'Logistique', 'Marge'],
-    color: 'amber',
-  },
-  {
-    id: 5,
-    title: 'Facebook Ads pour le e-commerce algérien : guide pratique 2025',
-    excerpt: 'Ciblage, budgets, créatifs et audiences — tout ce qu\'il faut savoir pour rentabiliser vos campagnes Meta Ads dans le marché local.',
-    category: 'marketing',
-    categoryLabel: 'Marketing Digital',
-    readTime: '10 min',
-    date: '30 Mars 2025',
-    featured: false,
-    tags: ['Facebook', 'Publicité', 'ROI'],
-    color: 'rose',
-  },
-  {
-    id: 6,
-    title: 'Comment lire vos analytics e-commerce et prendre les bonnes décisions',
-    excerpt: 'Taux de conversion, panier moyen, LTV client — comprendre ses données pour piloter sa boutique avec précision et anticiper les tendances.',
-    category: 'analytics',
-    categoryLabel: 'Analytics',
-    readTime: '9 min',
-    date: '28 Mars 2025',
-    featured: false,
-    tags: ['KPIs', 'Dashboard', 'Données'],
-    color: 'indigo',
-  },
-  {
-    id: 7,
-    title: 'Script de confirmation : les phrases qui font la différence',
-    excerpt: 'Les mots que vous utilisez au téléphone peuvent doubler votre taux de confirmation. Exemples concrets et formulation testées sur le terrain.',
-    category: 'confirmation',
-    categoryLabel: 'Confirmation',
-    readTime: '4 min',
-    date: '25 Mars 2025',
-    featured: false,
-    tags: ['Script', 'Call Center', 'Téléphone'],
-    color: 'emerald',
-  },
-  {
-    id: 8,
-    title: 'Réduire les retours de colis : stratégies efficaces pour le COD',
-    excerpt: 'Un colis non livré coûte cher. Apprenez à filtrer vos commandes, qualifier vos clients et réduire drastiquement votre taux de retour.',
-    category: 'logistique',
-    categoryLabel: 'Logistique & COD',
-    readTime: '6 min',
-    date: '22 Mars 2025',
-    featured: false,
-    tags: ['Retours', 'COD', 'Optimisation'],
-    color: 'amber',
-  },
+  const categories = [
+    { id: 'all', label: t('Tous'), icon: BookOpen },
+    { id: 'ecommerce', label: t('E-commerce'), icon: ShoppingCart },
+    { id: 'conversion', label: t('Conversion'), icon: TrendingUp },
+    { id: 'logistique', label: t('Logistique & COD'), icon: Truck },
+    { id: 'marketing', label: t('Marketing Digital'), icon: Zap },
+    { id: 'analytics', label: t('Analytics'), icon: BarChart3 },
+    { id: 'confirmation', label: t('Confirmation'), icon: PhoneCall },
+  ];
 
-];
+  const articles = [
+    {
+      id: 1,
+      title: t('Comment lancer sa boutique e-commerce en Algérie en 2025'),
+      excerpt: t('Guide complet pour créer, configurer et lancer votre boutique en ligne dès aujourd\'hui. De la sélection du nom de domaine à votre première vente.'),
+      category: 'ecommerce',
+      categoryLabel: t('E-commerce'),
+      readTime: '8 min',
+      date: '12 Avril 2025',
+      featured: true,
+      tags: [t('Lancement'), t('Guide'), t('Débutant')],
+      color: 'blue',
+    },
+    {
+      id: 2,
+      title: t('10 techniques pour augmenter votre taux de confirmation COD'),
+      excerpt: t('Le paiement à la livraison domine le marché algérien. Découvrez les méthodes éprouvées pour confirmer plus de commandes et réduire les retours.'),
+      category: 'confirmation',
+      categoryLabel: t('Confirmation'),
+      readTime: '6 min',
+      date: '8 Avril 2025',
+      featured: true,
+      tags: [t('COD'), t('Scripts'), t('Agents')],
+      color: 'emerald',
+    },
+    {
+      id: 3,
+      title: t('Optimiser sa page produit pour booster les conversions'),
+      excerpt: t('Les visiteurs décident en 3 secondes. Apprenez à structurer vos fiches produit pour maximiser les ajouts au panier et réduire les abandons.'),
+      category: 'conversion',
+      categoryLabel: t('Conversion'),
+      readTime: '5 min',
+      date: '5 Avril 2025',
+      featured: false,
+      tags: [t('UX'), t('Fiches produit'), t('CRO')],
+      color: 'violet',
+    },
+    {
+      id: 4,
+      title: t('Livraison express vs standard : quelle stratégie pour votre boutique ?'),
+      excerpt: t('Le choix de votre stratégie logistique impacte directement votre satisfaction client et vos marges. Comparatif complet des offres disponibles.'),
+      category: 'logistique',
+      categoryLabel: t('Logistique & COD'),
+      readTime: '7 min',
+      date: '2 Avril 2025',
+      featured: false,
+      tags: [t('Livraison'), t('Logistique'), t('Marge')],
+      color: 'amber',
+    },
+    {
+      id: 5,
+      title: t('Facebook Ads pour le e-commerce algérien : guide pratique 2025'),
+      excerpt: t('Ciblage, budgets, créatifs et audiences — tout ce qu\'il faut savoir pour rentabiliser vos campagnes Meta Ads dans le marché local.'),
+      category: 'marketing',
+      categoryLabel: t('Marketing Digital'),
+      readTime: '10 min',
+      date: '30 Mars 2025',
+      featured: false,
+      tags: [t('Facebook'), t('Publicité'), t('ROI')],
+      color: 'rose',
+    },
+    {
+      id: 6,
+      title: t('Comment lire vos analytics e-commerce et prendre les bonnes décisions'),
+      excerpt: t('Taux de conversion, panier moyen, LTV client — comprendre ses données pour piloter sa boutique avec précision et anticiper les tendances.'),
+      category: 'analytics',
+      categoryLabel: t('Analytics'),
+      readTime: '9 min',
+      date: '28 Mars 2025',
+      featured: false,
+      tags: [t('KPIs'), t('Dashboard'), t('Données')],
+      color: 'indigo',
+    },
+    {
+      id: 7,
+      title: t('Script de confirmation : les phrases qui font la différence'),
+      excerpt: t('Les mots que vous utilisez au téléphone peuvent doubler votre taux de confirmation. Exemples concrets et formulation testées sur le terrain.'),
+      category: 'confirmation',
+      categoryLabel: t('Confirmation'),
+      readTime: '4 min',
+      date: '25 Mars 2025',
+      featured: false,
+      tags: [t('Script'), t('Call Center'), t('Téléphone')],
+      color: 'emerald',
+    },
+    {
+      id: 8,
+      title: t('Réduire les retours de colis : stratégies efficaces pour le COD'),
+      excerpt: t('Un colis non livré coûte cher. Apprenez à filtrer vos commandes, qualifier vos clients et réduire drastiquement votre taux de retour.'),
+      category: 'logistique',
+      categoryLabel: t('Logistique & COD'),
+      readTime: '6 min',
+      date: '22 Mars 2025',
+      featured: false,
+      tags: [t('Retours'), t('COD'), t('Optimisation')],
+      color: 'amber',
+    },
 
-const colorMap = {
-  blue:   { badge: 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30', tag: 'bg-blue-50 dark:bg-blue-500/10 text-blue-500', dot: 'bg-blue-500', accent: 'border-l-blue-500' },
-  emerald:{ badge: 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30', tag: 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-500', dot: 'bg-emerald-500', accent: 'border-l-emerald-500' },
-  violet: { badge: 'bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-500/30', tag: 'bg-violet-50 dark:bg-violet-500/10 text-violet-500', dot: 'bg-violet-500', accent: 'border-l-violet-500' },
-  amber:  { badge: 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-500/30', tag: 'bg-amber-50 dark:bg-amber-500/10 text-amber-500', dot: 'bg-amber-500', accent: 'border-l-amber-500' },
-  rose:   { badge: 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-500/30', tag: 'bg-rose-50 dark:bg-rose-500/10 text-rose-500', dot: 'bg-rose-500', accent: 'border-l-rose-500' },
-  indigo: { badge: 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-500/30', tag: 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500', dot: 'bg-indigo-500', accent: 'border-l-indigo-500' },
+  ];
+
+  const colorMap = {
+    blue: { badge: 'bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-500/30', tag: 'bg-blue-50 dark:bg-blue-500/10 text-blue-500', dot: 'bg-blue-500', accent: 'border-s-blue-500' },
+    emerald: { badge: 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/30', tag: 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-500', dot: 'bg-emerald-500', accent: 'border-s-emerald-500' },
+    violet: { badge: 'bg-violet-50 dark:bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-500/30', tag: 'bg-violet-50 dark:bg-violet-500/10 text-violet-500', dot: 'bg-violet-500', accent: 'border-s-violet-500' },
+    amber: { badge: 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-500/30', tag: 'bg-amber-50 dark:bg-amber-500/10 text-amber-500', dot: 'bg-amber-500', accent: 'border-s-amber-500' },
+    rose: { badge: 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-200 dark:border-rose-500/30', tag: 'bg-rose-50 dark:bg-rose-500/10 text-rose-500', dot: 'bg-rose-500', accent: 'border-s-rose-500' },
+    indigo: { badge: 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-200 dark:border-indigo-500/30', tag: 'bg-indigo-50 dark:bg-indigo-500/10 text-indigo-500', dot: 'bg-indigo-500', accent: 'border-s-indigo-500' },
+  };
+
+  return { categories, articles, colorMap };
 };
 
 // ─── Components ────────────────────────────────────────────────────────────────
 
 const gradientMap = {
-  blue:   { cover: 'from-blue-600 to-blue-400',     text: 'text-blue-500',    badge: 'bg-blue-600/20 text-blue-100 border-blue-400/30', tag: 'bg-blue-500/15 text-blue-400' },
-  emerald:{ cover: 'from-emerald-600 to-teal-400',  text: 'text-emerald-500', badge: 'bg-emerald-600/20 text-emerald-100 border-emerald-400/30', tag: 'bg-emerald-500/15 text-emerald-400' },
-  violet: { cover: 'from-violet-600 to-purple-400', text: 'text-violet-500',  badge: 'bg-violet-600/20 text-violet-100 border-violet-400/30', tag: 'bg-violet-500/15 text-violet-400' },
-  amber:  { cover: 'from-amber-500 to-orange-400',  text: 'text-amber-500',   badge: 'bg-amber-500/20 text-amber-100 border-amber-400/30', tag: 'bg-amber-500/15 text-amber-400' },
-  rose:   { cover: 'from-rose-600 to-pink-400',     text: 'text-rose-500',    badge: 'bg-rose-600/20 text-rose-100 border-rose-400/30', tag: 'bg-rose-500/15 text-rose-400' },
-  indigo: { cover: 'from-indigo-600 to-blue-400',   text: 'text-indigo-500',  badge: 'bg-indigo-600/20 text-indigo-100 border-indigo-400/30', tag: 'bg-indigo-500/15 text-indigo-400' },
+  blue: { cover: 'from-blue-600 to-blue-400', text: 'text-blue-500', badge: 'bg-blue-600/20 text-blue-100 border-blue-400/30', tag: 'bg-blue-500/15 text-blue-400' },
+  emerald: { cover: 'from-emerald-600 to-teal-400', text: 'text-emerald-500', badge: 'bg-emerald-600/20 text-emerald-100 border-emerald-400/30', tag: 'bg-emerald-500/15 text-emerald-400' },
+  violet: { cover: 'from-violet-600 to-purple-400', text: 'text-violet-500', badge: 'bg-violet-600/20 text-violet-100 border-violet-400/30', tag: 'bg-violet-500/15 text-violet-400' },
+  amber: { cover: 'from-amber-500 to-orange-400', text: 'text-amber-500', badge: 'bg-amber-500/20 text-amber-100 border-amber-400/30', tag: 'bg-amber-500/15 text-amber-400' },
+  rose: { cover: 'from-rose-600 to-pink-400', text: 'text-rose-500', badge: 'bg-rose-600/20 text-rose-100 border-rose-400/30', tag: 'bg-rose-500/15 text-rose-400' },
+  indigo: { cover: 'from-indigo-600 to-blue-400', text: 'text-indigo-500', badge: 'bg-indigo-600/20 text-indigo-100 border-indigo-400/30', tag: 'bg-indigo-500/15 text-indigo-400' },
 };
 
 const ArticleCard = ({ article, large = false }) => {
+  const { t } = useTranslation();
+  const { categories } = useBlogData();
+
   const c = gradientMap[article.color] || gradientMap.blue;
   const CatIcon = categories.find(x => x.id === article.category)?.icon || BookOpen;
   return (
@@ -168,7 +178,7 @@ const ArticleCard = ({ article, large = false }) => {
         {/* Featured badge */}
         {article.featured && (
           <div className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm border border-white/30 text-white text-[9px] font-black uppercase tracking-wider rounded-full">
-            ⭐ À la une
+            {t("⭐ À la une")}
           </div>
         )}
       </div>
@@ -189,7 +199,7 @@ const ArticleCard = ({ article, large = false }) => {
         <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800">
           <span className="text-[10px] text-slate-400 font-medium">{article.date}</span>
           <span className="flex items-center gap-1 text-[10px] font-black text-primary group-hover:gap-2 transition-all">
-            Lire <ChevronRight size={12} />
+            {t("Lire")} <ChevronRight size={12} />
           </span>
         </div>
       </div>
@@ -199,6 +209,8 @@ const ArticleCard = ({ article, large = false }) => {
 
 
 const NewsletterBanner = () => {
+  const { t } = useTranslation();
+
   const [email, setEmail] = useState('');
   const [sent, setSent] = useState(false);
   return (
@@ -207,27 +219,27 @@ const NewsletterBanner = () => {
       <div className="relative z-10">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 mb-6">
           <Zap size={12} className="text-primary" />
-          <span className="text-[11px] font-bold text-slate-300">Conseils exclusifs chaque semaine</span>
+          <span className="text-[11px] font-bold text-slate-300">{t("Conseils exclusifs chaque semaine")}</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-3">
-          Restez un coup d'avance.<br/><span className="text-primary">Abonnez-vous gratuitement.</span>
+          {t("Restez un coup d'avance.")}<br /><span className="text-primary">{t("Abonnez-vous gratuitement.")}</span>
         </h2>
         <p className="text-slate-400 font-medium mb-8 max-w-lg mx-auto">
-          Recevez chaque semaine les meilleures ressources e-commerce, directement dans votre boîte mail. Pas de spam, jamais.
+          {t("Recevez chaque semaine les meilleures ressources e-commerce, directement dans votre boîte mail. Pas de spam, jamais.")}
         </p>
         {sent ? (
           <div className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 rounded-2xl font-bold text-sm">
-            ✓ Vous êtes inscrit ! Merci.
+            {t("✓ Vous êtes inscrit ! Merci.")}
           </div>
         ) : (
           <form onSubmit={(e) => { e.preventDefault(); if (email) setSent(true); }} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email" value={email} onChange={e => setEmail(e.target.value)} required
-              placeholder="votre@email.com"
+              placeholder={t("votre@email.com")}
               className="flex-1 px-4 py-3 rounded-2xl bg-white/10 border border-white/10 text-white placeholder-slate-500 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
             />
             <button type="submit" className="px-6 py-3 bg-primary hover:bg-primary-hover text-white font-black rounded-2xl text-sm uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-primary/25 whitespace-nowrap flex items-center gap-2">
-              S'abonner <ArrowRight size={14} />
+              {t("S'abonner")} <ArrowRight size={14} />
             </button>
           </form>
         )}
@@ -239,6 +251,9 @@ const NewsletterBanner = () => {
 // ─── Page ──────────────────────────────────────────────────────────────────────
 
 const BlogPage = () => {
+  const { t } = useTranslation();
+  const { categories, articles, colorMap } = useBlogData();
+
   const [activeCategory, setActiveCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -261,13 +276,13 @@ const BlogPage = () => {
         <div className="container mx-auto px-6 text-center max-w-4xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-50 dark:bg-violet-900/20 border border-violet-100 dark:border-violet-800/30 mb-8 mx-auto">
             <BookOpen size={12} className="text-violet-500" />
-            <span className="text-[11px] font-bold text-violet-600 dark:text-violet-400 tracking-tight">Ressources · Guides · Conseils</span>
+            <span className="text-[11px] font-bold text-violet-600 dark:text-violet-400 tracking-tight">{t("Ressources · Guides · Conseils")}</span>
           </div>
           <h1 className="text-5xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tight mb-6 leading-[1.05]">
-            Vendez plus.<br/><span className="text-primary italic">Apprenez mieux.</span>
+            {t("Vendez plus.")}<br /><span className="text-primary italic">{t("Apprenez mieux.")}</span>
           </h1>
           <p className="text-lg lg:text-xl text-slate-500 dark:text-slate-400 font-medium max-w-2xl mx-auto mb-10">
-            Guides pratiques, conseils terrain et ressources exclusives pour les e-commerçants algériens qui veulent passer au niveau supérieur.
+            {t("Guides pratiques, conseils terrain et ressources exclusives pour les e-commerçants algériens qui veulent passer au niveau supérieur.")}
           </p>
           {/* Search bar */}
           <div className="relative max-w-lg mx-auto">
@@ -276,8 +291,8 @@ const BlogPage = () => {
               type="text"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              placeholder="Rechercher un article…"
-              className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all shadow-sm"
+              placeholder={t("Rechercher un article…")}
+              className="w-full ps-12 pe-4 py-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all shadow-sm"
             />
           </div>
         </div>
@@ -293,11 +308,10 @@ const BlogPage = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs font-bold transition-all duration-200 ${
-                    activeCategory === cat.id
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs font-bold transition-all duration-200 ${activeCategory === cat.id
                       ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20'
                       : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-primary/40 hover:text-primary'
-                  }`}
+                    }`}
                 >
                   <CatIcon size={13} />
                   {cat.label}
@@ -314,10 +328,10 @@ const BlogPage = () => {
           {filtered.length === 0 ? (
             <div className="text-center py-24">
               <p className="text-4xl mb-4">🔍</p>
-              <h3 className="text-xl font-black text-slate-900 dark:text-white mb-2">Aucun article trouvé</h3>
-              <p className="text-slate-500 dark:text-slate-400 font-medium">Essayez un autre terme de recherche ou une autre catégorie.</p>
+              <h3 className="text-xl font-black text-slate-900 dark:text-white mb-2">{t("Aucun article trouvé")}</h3>
+              <p className="text-slate-500 dark:text-slate-400 font-medium">{t("Essayez un autre terme de recherche ou une autre catégorie.")}</p>
               <button onClick={() => { setSearchQuery(''); setActiveCategory('all'); }} className="mt-6 text-xs font-black text-primary hover:underline">
-                Tout afficher
+                {t("Tout afficher")}
               </button>
             </div>
           ) : (
@@ -325,7 +339,7 @@ const BlogPage = () => {
               {/* Featured articles */}
               {featured.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-8">À la une</p>
+                  <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-8">{t("À la une")}</p>
                   <div className="grid sm:grid-cols-2 gap-6">
                     {featured.map(a => <ArticleCard key={a.id} article={a} large />)}
                   </div>
@@ -335,7 +349,7 @@ const BlogPage = () => {
               {/* Rest of articles */}
               {rest.length > 0 && (
                 <div>
-                  {featured.length > 0 && <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">Tous les articles</p>}
+                  {featured.length > 0 && <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-8">{t("Tous les articles")}</p>}
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {rest.map(a => <ArticleCard key={a.id} article={a} />)}
                   </div>
@@ -348,7 +362,7 @@ const BlogPage = () => {
           {filtered.length > 0 && (
             <div className="text-center mt-16">
               <button className="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-black rounded-2xl text-sm transition-all active:scale-95">
-                Charger plus d'articles <ArrowRight size={16} />
+                {t("Charger plus d'articles")} <ArrowRight size={16} />
               </button>
               <p className="text-[10px] text-slate-400 mt-3">{filtered.length} article{filtered.length > 1 ? 's' : ''} disponible{filtered.length > 1 ? 's' : ''}</p>
             </div>
@@ -358,43 +372,43 @@ const BlogPage = () => {
 
       {/* ── Topic Quick Links ── */}
       {/* <section className="py-16 lg:py-24 bg-slate-50/50 dark:bg-slate-900/30 border-y border-slate-100 dark:border-slate-800">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-12">
-            <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4">Thématiques populaires</p>
-            <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">Explorez par sujet.</h2>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              { label: 'Démarrer votre boutique',  icon: ShoppingCart, count: 6,  color: 'blue',   cat: 'ecommerce'    },
-              { label: 'Augmenter la conversion',   icon: TrendingUp,   count: 4,  color: 'violet', cat: 'conversion'   },
-              { label: 'Maîtriser le COD',          icon: Truck,        count: 5,  color: 'amber',  cat: 'logistique'   },
-              { label: 'Confirmation d\'appels',     icon: PhoneCall,    count: 3,  color: 'emerald',cat: 'confirmation' },
-              { label: 'Marketing & Publicité',     icon: Zap,          count: 7,  color: 'rose',   cat: 'marketing'    },
-              { label: 'Lire ses analytics',        icon: BarChart3,    count: 4,  color: 'indigo', cat: 'analytics'    },
-              { label: 'Gestion des stocks',        icon: Package,      count: 3,  color: 'blue',   cat: 'ecommerce'    },
-              { label: 'Optimisation business',     icon: TrendingUp,   count: 5,  color: 'violet', cat: 'conversion'   },
-            ].map((t, i) => {
-              const TIcon = t.icon;
-              const c = colorMap[t.color];
-              return (
-                <button
-                  key={i}
-                  onClick={() => { setActiveCategory(t.cat); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                  className="group flex items-center gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-left"
-                >
-                  <div className={`w-9 h-9 rounded-xl ${c.tag} bg-opacity-20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
-                    <TIcon size={16} className={c.tag.replace('bg-', 'text-').split(' ')[1]} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-800 dark:text-white leading-tight">{t.label}</p>
-                    <p className="text-[9px] text-slate-400 font-medium">{t.count} articles</p>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section> */}
+ <div className="container mx-auto px-6 max-w-6xl">
+ <div className="text-center mb-12">
+ <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em] mb-4">{t("Thématiques populaires")}</p>
+ <h2 className="text-3xl lg:text-4xl font-black text-slate-900 dark:text-white tracking-tight">{t("Explorez par sujet.")}</h2>
+ </div>
+ <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+ {[
+ { label: t('Démarrer votre boutique'), icon: ShoppingCart, count: 6, color: 'blue', cat: 'ecommerce' },
+ { label: t('Augmenter la conversion'), icon: TrendingUp, count: 4, color: 'violet', cat: 'conversion' },
+ { label: t('Maîtriser le COD'), icon: Truck, count: 5, color: 'amber', cat: 'logistique' },
+ { label: t('Confirmation d\'appels'), icon: PhoneCall, count: 3, color: 'emerald',cat: 'confirmation' },
+ { label: t('Marketing & Publicité'), icon: Zap, count: 7, color: 'rose', cat: 'marketing' },
+ { label: t('Lire ses analytics'), icon: BarChart3, count: 4, color: 'indigo', cat: 'analytics' },
+ { label: t('Gestion des stocks'), icon: Package, count: 3, color: 'blue', cat: 'ecommerce' },
+ { label: t('Optimisation business'), icon: TrendingUp, count: 5, color: 'violet', cat: 'conversion' },
+ ].map((t, i) => {
+ const TIcon = t.icon;
+ const c = colorMap[t.color];
+ return (
+ <button
+ key={i}
+ onClick={() => { setActiveCategory(t.cat); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+ className="group flex items-center gap-3 p-4 bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-start"
+ >
+ <div className={`w-9 h-9 rounded-xl ${c.tag} bg-opacity-20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+ <TIcon size={16} className={c.tag.replace('bg-', 'text-').split(' ')[1]} />
+ </div>
+ <div>
+ <p className="text-xs font-bold text-slate-800 dark:text-white leading-tight">{t.label}</p>
+ <p className="text-[9px] text-slate-400 font-medium">{t.count} articles</p>
+ </div>
+ </button>
+ );
+ })}
+ </div>
+ </div>
+ </section> */}
 
       {/* ── Newsletter ── */}
       <section className="py-20 lg:py-28">

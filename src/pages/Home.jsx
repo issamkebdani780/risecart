@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Hero from '../components/sections/Hero';
@@ -14,25 +15,27 @@ import FAQ from '../components/sections/FAQ';
 import FinalCTA from '../components/sections/FinalCTA';
 
 const Home = () => {
-  return (
-    <div className="bg-white dark:bg-slate-950 min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <TrustBand />
-        <ProblemSection />
-        <WhyRiseCart />
-        <FeaturesGrid />
-        <HowItWorks />
-        <Ecosystem />
-        <PricingSection />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
-  );
+  const { t } = useTranslation();
+
+ return (
+ <div className="bg-white dark:bg-slate-950 min-h-screen">
+ <Navbar />
+ <main>
+ <Hero />
+ <TrustBand />
+ <ProblemSection />
+ <WhyRiseCart />
+ <FeaturesGrid />
+ <HowItWorks />
+ <Ecosystem />
+ <PricingSection />
+ <Testimonials />
+ <FAQ />
+ <FinalCTA />
+ </main>
+ <Footer />
+ </div>
+ );
 };
 
 export default Home;
