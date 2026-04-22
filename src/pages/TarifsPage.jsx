@@ -293,7 +293,7 @@ const TarifsPage = () => {
  : 'bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-900 dark:text-white'
  }`}
  >
- {plan.cta} <ArrowRight size={16} />
+ {plan.cta} <ArrowRight size={16} className="rtl:rotate-180" />
  </a>
  </div>
  );
@@ -375,7 +375,7 @@ const TarifsPage = () => {
  <p className="text-slate-400 font-medium mb-10 max-w-xl mx-auto text-base sm:text-lg">{t("Accédez à l'intégralité des fonctionnalités premium, sans engagement, sans limite. Votre boutique en ligne peut être prête ce soir.")}</p>
  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
  <a href="/signup" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-primary/25">
- {t("Commencer l'essai gratuit")} <ArrowRight size={16} />
+ {t("Commencer l'essai gratuit")} <ArrowRight size={16} className="rtl:rotate-180" />
  </a>
  <a href="/contact" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/10 text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/5 transition-all active:scale-95">
  {t("Parler à un expert")}

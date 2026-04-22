@@ -33,7 +33,7 @@ const FinalCTA = () => {
  to="/signup"
  className="w-full sm:w-auto bg-white text-slate-900 px-10 py-5 rounded-2xl font-black text-lg hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3 group"
  >
- {t("Démarrer l'essai gratuit")} <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform rtl:hidden" />
+ {t("Démarrer l'essai gratuit")} <ArrowRight size={20} className="transition-transform ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180" />
  </Link>
  <Link 
  to="/demo"

@@ -100,7 +100,7 @@ const Hero = () => {
  to="/demo"
  className="w-full sm:w-auto bg-white dark:bg-slate-900 text-primary dark:text-primary border border-slate-100 dark:border-slate-800 px-8 py-4 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-2 hover:bg-slate-50 dark:hover:bg-slate-800 group"
  >
- {t('cta_demo')} <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+ {t('cta_demo')} <ArrowRight size={18} className="transition-transform ltr:group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180" />
  </Link>
  </div>
 
@@ -151,7 +151,7 @@ const Hero = () => {
  <div className="w-3 h-3 rounded-full bg-yellow-400" />
  <div className="w-3 h-3 rounded-full bg-green-400" />
  </div>
- <div className="bg-white dark:bg-slate-900 rounded-lg px-4 py-1 text-[10px] font-bold text-slate-400 border border-slate-100 dark:border-slate-700 tabular-nums">
+ <div className="bg-white dark:bg-slate-900 rounded-lg px-4 py-1 text-[10px] font-bold text-slate-400 border border-slate-100 dark:border-slate-700 tabular-nums" dir="ltr">
  risecart-admin.com/dashboard/{dashboardTab}
  </div>
  </div>
@@ -172,7 +172,7 @@ const Hero = () => {
  >
  <Icon size={20} className={dashboardTab === item.id ? 'scale-110' : 'group-hover/icon:scale-110 transition-transform'} />
  {/* Tooltip */}
- <div className="absolute left-full ms-4 px-2 py-1 rounded bg-slate-900 text-white text-[8px] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none hidden xs:block">
+ <div className="absolute ltr:left-full rtl:right-full ltr:ms-4 rtl:me-4 px-2 py-1 rounded bg-slate-900 text-white text-[8px] font-black uppercase tracking-widest opacity-0 group-hover/icon:opacity-100 transition-all whitespace-nowrap z-50 pointer-events-none hidden xs:block">
  {item.label}
  </div>
  </div>
@@ -185,11 +185,11 @@ const Hero = () => {
  <div className="flex items-center justify-between mb-6 xs:mb-8 animate-fade-in" key={dashboardTab}>
  <div>
  <h3 className="text-base xs:text-xl font-black text-slate-900 dark:text-white tracking-tight leading-none mb-1 xs:mb-0">
- {dashboardTab === 'orders' && 'Commandes'}
- {dashboardTab === 'analytics' && 'Tableau de Bord'}
- {dashboardTab === 'customers' && 'Base Clients'}
- {dashboardTab === 'finance' && 'Revenus & Pay'}
- {dashboardTab === 'webstore' && 'Store Builder'}
+ {dashboardTab === 'orders' && t('Commandes')}
+ {dashboardTab === 'analytics' && t('Statistiques')}
+ {dashboardTab === 'customers' && t('Clients')}
+ {dashboardTab === 'finance' && t('Finance')}
+ {dashboardTab === 'webstore' && t('Boutique')}
  </h3>
  <p className="text-[8px] xs:text-[10px] text-slate-400 font-bold uppercase tracking-widest truncate">{t("Aperçu en temps réel")}</p>
  </div>
@@ -398,7 +398,7 @@ const Hero = () => {
  </div>
 
  {/* Mobile Float - Matching the theme */}
- <div className="absolute -bottom-10 -right-6 w-48 h-80 bg-white dark:bg-slate-900 rounded-[2.5rem] p-3 shadow-2xl shadow-primary/20 animate-float border border-slate-100 dark:border-slate-800 -rotate-2 hidden xl:block z-50">
+ <div className="absolute -bottom-10 -right-6 rtl:right-auto rtl:-left-6 w-48 h-80 bg-white dark:bg-slate-900 rounded-[2.5rem] p-3 shadow-2xl shadow-primary/20 animate-float border border-slate-100 dark:border-slate-800 -rotate-2 rtl:rotate-2 hidden xl:block z-50">
  <div className="w-full h-full bg-white dark:bg-slate-950 rounded-[2rem] border border-slate-50 dark:border-slate-900 p-4 flex flex-col gap-4 overflow-hidden">
  <div className="px-2 py-6 bg-primary/5 rounded-2xl flex flex-col items-center gap-2">
  <p className="text-[8px] font-black text-slate-400 uppercase tracking-tighter">{t("Total Revenues")}</p>

@@ -89,7 +89,7 @@ const PricingSection = () => {
 
                         <div className="relative flex items-center p-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-inner">
                             <div
-                                className={`absolute inset-y-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-950 rounded-full shadow-sm transition-transform duration-300 ease-out border border-slate-200 dark:border-slate-700 ${isAnnual ? 'translate-x-[100%] ms-[3px]' : 'translate-x-0 ms-[3px]'}`}
+                                className={`absolute inset-y-1.5 w-[calc(50%-6px)] bg-white dark:bg-slate-950 rounded-full shadow-sm transition-transform duration-300 ease-out border border-slate-200 dark:border-slate-700 ${isAnnual ? 'ltr:translate-x-[100%] rtl:-translate-x-[100%] ms-[3px]' : 'translate-x-0 ms-[3px]'}`}
                             />
                             <button
                                 onClick={() => setIsAnnual(false)}
@@ -185,7 +185,7 @@ const PricingSection = () => {
                                     }`}
                             >
                                 <span>{plan.cta}</span>
-                                <ArrowRight size={18} />
+                                <ArrowRight size={18} className="rtl:rotate-180" />
                             </button>
                         </div>
                     ))}

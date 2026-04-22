@@ -199,7 +199,7 @@ const ArticleCard = ({ article, large = false }) => {
         <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800">
           <span className="text-[10px] text-slate-400 font-medium">{article.date}</span>
           <span className="flex items-center gap-1 text-[10px] font-black text-primary group-hover:gap-2 transition-all">
-            {t("Lire")} <ChevronRight size={12} />
+            {t("Lire")} <ChevronRight size={12} className="rtl:rotate-180" />
           </span>
         </div>
       </div>
@@ -239,7 +239,7 @@ const NewsletterBanner = () => {
               className="flex-1 px-4 py-3 rounded-2xl bg-white/10 border border-white/10 text-white placeholder-slate-500 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition-all"
             />
             <button type="submit" className="px-6 py-3 bg-primary hover:bg-primary-hover text-white font-black rounded-2xl text-sm uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-primary/25 whitespace-nowrap flex items-center gap-2">
-              {t("S'abonner")} <ArrowRight size={14} />
+              {t("S'abonner")} <ArrowRight size={14} className="rtl:rotate-180" />
             </button>
           </form>
         )}
@@ -362,7 +362,7 @@ const BlogPage = () => {
           {filtered.length > 0 && (
             <div className="text-center mt-16">
               <button className="inline-flex items-center gap-2 px-8 py-4 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-black rounded-2xl text-sm transition-all active:scale-95">
-                {t("Charger plus d'articles")} <ArrowRight size={16} />
+                {t("Charger plus d'articles")} <ArrowRight size={16} className="rtl:rotate-180" />
               </button>
               <p className="text-[10px] text-slate-400 mt-3">{filtered.length} article{filtered.length > 1 ? 's' : ''} disponible{filtered.length > 1 ? 's' : ''}</p>
             </div>

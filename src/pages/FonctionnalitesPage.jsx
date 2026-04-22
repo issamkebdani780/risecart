@@ -345,7 +345,7 @@ const FonctionnalitesPage = () => {
                             const c = colorMap[mod.color];
                             return (
                                 <div key={i} className={`relative group flex flex-col gap-4 p-6 sm:p-8 bg-white dark:bg-slate-900/50 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-black/20 hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden ${c.border}`}>
-                                    <span className={`absolute -top-2 -right-1 text-8xl font-black select-none pointer-events-none transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 ${c.num}`}>{mod.num}</span>
+                                    <span className={`absolute -top-2 ltr:-right-1 rtl:-left-1 text-8xl font-black select-none pointer-events-none transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1 ${c.num}`}>{mod.num}</span>
                                     <div className={`w-12 h-12 rounded-2xl ${c.bg} flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-3`}>
                                         <mod.icon size={22} className={`${c.text}`} />
                                     </div>
@@ -396,7 +396,7 @@ const FonctionnalitesPage = () => {
                         <h3 className="text-3xl lg:text-5xl font-black text-white mb-6 relative z-10 tracking-tight">{t("Prêt à transformer votre gestion ?")}</h3>
                         <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto relative z-10 font-medium">{t("Démarrez maintenant avec une base solide conçue pour la vraie performance e-commerce.")}</p>
                         <a href="/signup" className="inline-flex items-center gap-2 bg-primary text-white border border-primary px-8 py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-widest hover:bg-white hover:text-slate-900 hover:border-white transition-all shadow-xl shadow-primary/20 relative z-10 active:scale-95">
-                            {t("Ouvrir ma boutique")} <ArrowRight size={16} />
+                            {t("Ouvrir ma boutique")} <ArrowRight size={16} className="rtl:rotate-180" />
                         </a>
                     </div>
 

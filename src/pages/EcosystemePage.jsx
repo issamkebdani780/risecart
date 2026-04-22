@@ -216,7 +216,7 @@ const ProductDetail = ({ product }) => {
         <span className="text-xs text-slate-400 font-medium">{t("Partie intégrante de l'écosystème RiseGroup")}</span>
         {product.status !== 'Bientôt' ? (
           <a href="/signup" className="flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-xl font-black text-xs uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-primary/20 whitespace-nowrap">
-            {t("Connecter")} <ArrowRight size={14} />
+            {t("Connecter")} <ArrowRight size={14} className="rtl:rotate-180" />
           </a>
         ) : (
           <span className="text-xs font-black text-amber-500 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 px-4 py-2 rounded-xl">{t("Bientôt disponible")}</span>
@@ -413,7 +413,7 @@ const EcosystemePage = () => {
                     {s.step}
                   </div>
                   {i < 3 && (
-                    <ChevronRight size={20} className="hidden lg:block absolute top-7 -right-4 text-primary/40 z-20" />
+                    <ChevronRight size={20} className="hidden lg:block absolute top-7 -right-4 text-primary/40 z-20 rtl:rotate-180" />
                   )}
                   <p className={`text-[9px] font-black uppercase tracking-[0.2em] mb-2 ${s.color === 'blue' ? 'text-blue-500' :
                       s.color === 'emerald' ? 'text-emerald-500' :

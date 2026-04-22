@@ -212,7 +212,7 @@ const VideoPlayer = () => {
               <Play size={28} className="text-primary ms-1" fill="currentColor" />
             </div>
           </div>
-          <div className="absolute bottom-6 left-6 text-white">
+          <div className="absolute bottom-6 ltr:left-6 rtl:right-6 text-white text-start">
             <p className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-1">{t("Démonstration complète")}</p>
             <p className="text-lg font-black">{t("RiseCart en action · 4 min")}</p>
           </div>
@@ -255,7 +255,7 @@ const DashboardPreview = () => {
           <div className="w-2.5 h-2.5 rounded-full bg-rose-500 opacity-70" />
           <div className="w-2.5 h-2.5 rounded-full bg-amber-400 opacity-70" />
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 opacity-70" />
-          <div className="mx-auto bg-slate-800 rounded px-4 text-[9px] text-slate-500 py-0.5">app.risecart.dz · {t(TABS[active])}</div>
+          <div className="mx-auto bg-slate-800 rounded px-4 text-[9px] text-slate-500 py-0.5" dir="ltr">app.risecart.dz · {t(TABS[active])}</div>
         </div>
         {/* Content area */}
         <div className="p-3 bg-slate-50 dark:bg-slate-950 min-h-[320px] flex flex-col">
@@ -340,7 +340,7 @@ const BookingForm = () => {
       </div>
       <button type="submit"
         className="w-full py-4 bg-primary hover:bg-primary-hover text-white font-black rounded-2xl text-sm uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl shadow-primary/20 transition-all active:scale-95">
-        {t("Réserver ma démo")} <ArrowRight size={16} />
+        {t("Réserver ma démo")} <ArrowRight size={16} className="rtl:rotate-180" />
       </button>
       <p className="text-center text-[10px] text-slate-400 font-medium">
         <ShieldCheck size={11} className="inline me-1 text-emerald-500" />
@@ -541,7 +541,7 @@ const DemoPage = () => {
               <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-4">{t("Pas prêt pour une démo ?")}<br /><span className="text-primary">{t("Testez directement.")}</span></h2>
               <p className="text-slate-400 font-medium mb-8 max-w-lg mx-auto">{t("7 jours d'accès complet. Aucune carte bancaire requise. Votre boutique peut être en ligne ce soir.")}</p>
               <a href="/signup" className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-2xl font-black text-sm uppercase tracking-widest transition-all active:scale-95 shadow-xl shadow-primary/25">
-                {t("Démarrer l'essai gratuit")} <ArrowRight size={16} />
+                {t("Démarrer l'essai gratuit")} <ArrowRight size={16} className="rtl:rotate-180" />
               </a>
             </div>
           </div>
